@@ -16,6 +16,7 @@ router.post('/login', Auth.loginUser);
 router.post('/ubahpassword', Auth.changePassword);
 router.post('/tambahsoal', Soal.addSoal);
 router.post('/deletesoal', Soal.deleteSoal);
+router.post('/allnilai', Nilai.getAllNilai);
 router.post('/tambahnilai', Nilai.addNilaiSiswa);
 router.post('/nilai', Nilai.getNilaiSiswa);
 router.post('/countGuruAtas', Auth.getCountGuru);

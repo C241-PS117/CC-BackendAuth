@@ -2,6 +2,31 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 
+const getAllNilai = async (req, res) => {
+  const { idGuru } = req.body;
+  try {
+      // Query to get all nilai records for a specific idGuru
+      const nilai = await prisma.$queryRaw`SELECT * FROM nilai WHERE idGuru = ${idGuru};`;
+      
+      // Format the retrieved data
+      const formattedData = nilai.map(nilais => ({
+          id: nilais.id,
+          namaSiswa: nilais.namaSiswa,
+          nilaiSiswa: nilais.nilaiSiswa,
+      }));
+      
+      // Send the formatted data as a response
+      res.json({
+          status: 'success',
+          message: 'Get Data Berhasil',
+          data: formattedData
+      });
+  } catch (error) {
+      // Handle any errors that occur during the query
+      res.status(500).json({ error: error.message });
+  }
+};
+
 
 const getNilaiSiswa =  async (req, res) => {
     const { idSoal, idGuru} = req.body;
@@ -80,5 +105,5 @@ const deleteNilaiSiswa = async (req, res) => {
 
 
 module.exports = {
-    getNilaiSiswa, addNilaiSiswa, deleteNilaiSiswa
+    getNilaiSiswa, addNilaiSiswa, deleteNilaiSiswa, getAllNilai
   };
