@@ -42,7 +42,8 @@ If you want to run this API Server on your local machine, you need to do this st
 
 # Cloud Services
 
-## ![Cloud Architecture](images/CloudArchitecture.png)
+## ![Cloud Architecture]![essy drawio (2)](https://github.com/C241-PS117/CC-BackendAuth/assets/125329725/d8575136-f193-458d-b51b-81fb00d3a843)
+
 
 ## Deskripsi Layanan Cloud
 
@@ -58,4 +59,5 @@ Cloud SQL is used to store relational data such as user data, child data, and pr
 ### Postman
 Postman is used to test the backend API. Provides tools for developing, testing, and documenting APIs.
 
-## ![Database Diagram](images/DatabaseDiagram.png)
+## ![Database Diagram]![Screenshot 2024-06-08 203103](https://github.com/C241-PS117/CC-BackendAuth/assets/125329725/51b8f332-38e8-4a36-becd-d1189c1375d8)
+
